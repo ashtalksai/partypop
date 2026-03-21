@@ -31,7 +31,6 @@ export function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
@@ -52,7 +51,6 @@ export function HowItWorks() {
               key={step.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="how-it-works-step"
               data-reverse={i % 2 === 1 ? "true" : "false"}

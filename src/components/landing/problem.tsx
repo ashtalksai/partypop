@@ -27,7 +27,6 @@ export function Problem() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
         >
@@ -43,7 +42,6 @@ export function Problem() {
               key={p.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="rounded-lg p-6 border"
               style={{

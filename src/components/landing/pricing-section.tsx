@@ -67,7 +67,6 @@ export function PricingSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
         >
@@ -85,7 +84,6 @@ export function PricingSection() {
               key={plan.name}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="relative rounded-lg border p-7"
               style={{

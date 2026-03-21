@@ -37,7 +37,6 @@ export function SocialProof() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
         >
@@ -52,7 +51,6 @@ export function SocialProof() {
               key={t.name}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="rounded-lg p-7 border"
               style={{
@@ -84,7 +82,6 @@ export function SocialProof() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3 }}
           className="rounded-lg px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6"
           style={{ background: "var(--accent)" }}

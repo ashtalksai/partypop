@@ -46,7 +46,6 @@ export function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
         >
@@ -61,7 +60,6 @@ export function FAQ() {
               key={i}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
             >
               <AccordionItem
