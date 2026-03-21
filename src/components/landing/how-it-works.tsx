@@ -54,9 +54,11 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`flex flex-col md:flex-row items-center gap-12 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+              className="how-it-works-step"
+              data-reverse={i % 2 === 1 ? "true" : "false"}
+              style={{ display: "flex", alignItems: "center" }}
             >
-              <div className="flex-1">
+              <div style={{ flex: 1 }}>
                 <div
                   className="text-8xl font-bold mb-0 leading-none select-none"
                   style={{ color: "var(--border)", fontFamily: "var(--font-mono)" }}
@@ -76,7 +78,7 @@ export function HowItWorks() {
                   {step.description}
                 </p>
               </div>
-              <div className="flex-1">
+              <div style={{ flex: 1 }}>
                 <div
                   className="rounded-xl overflow-hidden border"
                   style={{

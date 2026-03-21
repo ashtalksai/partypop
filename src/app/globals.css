@@ -100,3 +100,46 @@ h1, h2, h3, h4, h5, h6 {
 [data-state="open"] .accordion-trigger-inner {
   border-left: 3px solid var(--accent);
 }
+
+/* BUG-06: Ensure max-w-container works (custom Tailwind token) */
+.max-w-container {
+  max-width: 1200px;
+}
+
+/* BUG-06: Ensure mx-auto works */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BUG-04: Auth split-screen panel */
+.auth-panel-right {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .auth-panel-right {
+    display: flex;
+  }
+}
+
+/* BUG-03: How-it-works steps responsive layout */
+.how-it-works-step {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .how-it-works-step {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .how-it-works-step[data-reverse="true"] {
+    flex-direction: row-reverse;
+  }
+}

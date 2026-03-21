@@ -80,8 +80,7 @@ export default function LoginPage() {
         </motion.div>
       </div>
 
-      <div className="hidden lg:flex flex-1 flex-col items-center justify-center p-12"
-        style={{ background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-amber) 100%)" }}>
+      <div className="auth-panel-right" style={{ background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-amber) 100%)" }}>
         <div className="max-w-xs w-full">
           <Image src="/images/hero-illustration.png" alt="Partypop" width={400} height={280} className="rounded-xl mb-8"
             style={{ boxShadow: "0 16px 48px rgba(45,27,14,0.2)", transform: "rotate(1deg)" }} />

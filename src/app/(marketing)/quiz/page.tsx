@@ -68,8 +68,12 @@ export default function QuizPage() {
             <div className="flex flex-wrap gap-2">
               {(q.options as string[]).map(o => (
                 <button key={o} onClick={() => setAnswers(a => ({ ...a, [q.key]: o }))}
-                  className="px-4 py-2 rounded-full border text-sm font-medium transition-all"
+                  className="rounded-full border text-sm font-medium transition-all"
                   style={{
+                    padding: "8px 16px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    minHeight: "36px",
                     borderColor: answer === o ? "var(--accent)" : "var(--border)",
                     background: answer === o ? "rgba(255,107,74,0.1)" : "transparent",
                     color: answer === o ? "var(--accent)" : "var(--text-secondary)",

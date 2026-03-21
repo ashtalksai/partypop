@@ -123,7 +123,7 @@ export default function DeckPage() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#1a0f08" }}>
+    <div className="flex flex-col" style={{ background: "#1a0f08", width: "100vw", height: "100vh", overflow: "hidden" }}>
       {/* Nav */}
       <div className="flex items-center justify-between px-6 py-4">
         <Link href="/" className="font-display text-xl font-bold text-white">
