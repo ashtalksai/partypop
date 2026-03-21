@@ -12,28 +12,63 @@ const sections = [
   { id: "pitch", icon: Presentation, label: "Pitch", desc: "Investor pitch deck, key metrics, narrative" },
 ];
 
-const docs: Record<string, { title: string; summary: string; url: string; updated: string }[]> = {
+const docs: Record<string, { title: string; summary: string; url: string; updated: string; external?: boolean }[]> = {
   research: [
-    { title: "Partypop Research — IdeaBrowser", summary: "Market opportunity, competitor analysis, target audience insights for AI party planning", url: "#", updated: "2 days ago" },
-    { title: "Competitor Landscape", summary: "PartyPilotAI, Pinterest, Evite, and ChatGPT analysis — positioning gaps", url: "#", updated: "2 days ago" },
+    {
+      title: "Research Brief — Partypop",
+      summary: "IdeaBrowser analysis, market opportunity ($13.2B), competitor landscape (PartyPilotAI, Pinterest, Evite), validation signals from Reddit + Facebook + YouTube, and GO/SKIP recommendation.",
+      url: "https://docs.google.com/document/d/1Ciapkp9sRuCC1Wp1Z9ueK9sYgJV1MxRQ21hb7t2USLk/edit",
+      updated: "Mar 21, 2026",
+      external: true,
+    },
   ],
   gtm: [
-    { title: "GTM Plan — Partypop", summary: "Phase 1-3 launch strategy, channel priorities, first 90 days", url: "#", updated: "1 day ago" },
+    {
+      title: "GTM Plan — Partypop",
+      summary: "3-phase go-to-market strategy: Phase 1 organic (Reddit, Pinterest, Facebook Groups, TikTok, SEO), Phase 2 paid + partnerships, Phase 3 vendor marketplace. 90-day milestones and channel stack.",
+      url: "https://docs.google.com/document/d/1D8Qq2gftOhV1gz6XSZBzMN9P1d9bDLBFQlsz3Hz9amc/edit",
+      updated: "Mar 21, 2026",
+      external: true,
+    },
   ],
   marketing: [
-    { title: "Marketing Plan — Partypop", summary: "Content strategy, SEO keywords, Pinterest/Instagram playbook, email flows", url: "#", updated: "1 day ago" },
+    {
+      title: "Marketing Plan — Partypop",
+      summary: "Brand voice, content calendar, blog strategy (10 priority posts), email welcome sequence (5-day drip), Pinterest + TikTok + Instagram playbook, KPIs and tracking.",
+      url: "https://docs.google.com/document/d/1XHnjdw5K68JYKI5q8TZa4x30dUCyklRjDU51Fkjv80Q/edit",
+      updated: "Mar 21, 2026",
+      external: true,
+    },
   ],
   brand: [
-    { title: "Brand & Design Spec — Partypop", summary: "Complete brand tokens, color palette, typography, component specifications", url: "https://docs.google.com/document/d/1tXLtaOt0inqPHD36bosb3dkm48OEhiTyKHUqLXco4mE/edit", updated: "Today" },
-    { title: "Product Enrichment — Partypop", summary: "Full product spec, page content briefs, core workflows, data model", url: "https://docs.google.com/document/d/1vt0uCOGHqIxYW1jnfMH8uaDh3pCCk2pIAsqjzJ5lb-k/edit", updated: "Today" },
+    {
+      title: "Brand & Design Spec — Partypop",
+      summary: "Complete brand tokens: coral #FF6B4A + amber #FFB347 + cream #FFF8F4. Typography (Fraunces + Plus Jakarta Sans + DM Mono), spacing scale, shadows, component specs, and full UI mockups for every page.",
+      url: "https://docs.google.com/document/d/1tXLtaOt0inqPHD36bosb3dkm48OEhiTyKHUqLXco4mE/edit",
+      updated: "Mar 21, 2026",
+      external: true,
+    },
   ],
   pitch: [
-    { title: "Pitch Deck — Partypop", summary: "Investor presentation: problem, solution, market, business model, team", url: "/deck", updated: "Today" },
+    {
+      title: "Interactive Pitch Deck — Partypop",
+      summary: "6-slide animated pitch deck: Title, Problem, Solution, Market ($13.2B), Business Model (Free / $9 / $19), and Vision. Built with Framer Motion, full-screen navigation, keyboard shortcuts.",
+      url: "/pitch",
+      updated: "Mar 21, 2026",
+      external: false,
+    },
+    {
+      title: "Pitch Deck Content (Google Doc)",
+      summary: "Source content for the pitch deck: all 6 slides with headlines, copy, stats, and CTAs. Written by @marketer for the Partypop investor pitch.",
+      url: "https://docs.google.com/document/d/1QfH2kZLzzc6981xbLcf2_LlnxyDsJsNUOyXru6d4BBQ/edit",
+      updated: "Mar 21, 2026",
+      external: true,
+    },
   ],
 };
 
 export default function DocsPage() {
-  const [activeSection, setActiveSection] = useState("brand");
+  const [activeSection, setActiveSection] = useState("research");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const current = sections.find(s => s.id === activeSection)!;
@@ -96,15 +131,17 @@ export default function DocsPage() {
               <a
                 key={doc.title}
                 href={doc.url}
-                target={doc.url.startsWith("http") ? "_blank" : "_self"}
-                rel="noreferrer"
-                className="rounded-lg border p-5 block hover:shadow-card-hover transition-all"
+                target={doc.external ? "_blank" : "_self"}
+                rel={doc.external ? "noreferrer" : undefined}
+                className="rounded-lg border p-5 block hover:shadow-card-hover transition-all group"
                 style={{ background: "var(--surface)", borderColor: "var(--border)" }}
               >
                 <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text-primary)" }}>{doc.title}</h3>
                 <p className="text-sm mb-3 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{doc.summary}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium" style={{ color: "var(--accent)" }}>Open →</span>
+                  <span className="text-xs font-medium flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                    {doc.external ? "Open in Google Docs →" : "View →"}
+                  </span>
                   <span className="text-xs" style={{ color: "var(--text-muted)" }}>Updated {doc.updated}</span>
                 </div>
               </a>
