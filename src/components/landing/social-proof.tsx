@@ -35,7 +35,7 @@ export function SocialProof() {
     <section className="py-24" style={{ background: "var(--surface-warm)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
@@ -49,7 +49,7 @@ export function SocialProof() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="rounded-lg p-7 border"
@@ -80,7 +80,7 @@ export function SocialProof() {
 
         {/* Stats strip */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 1, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4, delay: 0.3 }}
           className="rounded-lg px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-6"

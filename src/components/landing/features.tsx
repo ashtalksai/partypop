@@ -45,7 +45,7 @@ export function Features() {
     <section className="py-24" style={{ background: "var(--background)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
@@ -59,7 +59,7 @@ export function Features() {
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
               whileHover={{ boxShadow: "0 4px 16px rgba(255,107,74,0.12), 0 8px 32px rgba(45,27,14,0.08)", y: -2 }}

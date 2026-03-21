@@ -25,7 +25,7 @@ export function Problem() {
     <section className="py-24" style={{ background: "var(--surface-warm)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
@@ -40,7 +40,7 @@ export function Problem() {
           {problems.map((p, i) => (
             <motion.div
               key={p.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="rounded-lg p-6 border"

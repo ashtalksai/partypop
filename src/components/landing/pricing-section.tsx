@@ -65,7 +65,7 @@ export function PricingSection() {
     <section id="pricing" className="py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
@@ -82,7 +82,7 @@ export function PricingSection() {
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="relative rounded-lg border p-7"

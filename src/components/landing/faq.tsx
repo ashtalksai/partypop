@@ -44,7 +44,7 @@ export function FAQ() {
     <section className="py-24" style={{ background: "var(--background)" }}>
       <div className="max-w-[760px] mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-14"
@@ -58,7 +58,7 @@ export function FAQ() {
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 1, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
             >

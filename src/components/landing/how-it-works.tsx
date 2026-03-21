@@ -29,7 +29,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.4 }}
           className="text-center mb-16"
@@ -49,7 +49,7 @@ export function HowItWorks() {
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="how-it-works-step"
