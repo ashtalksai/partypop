@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <!-- Party popper icon -->
+  <g transform="translate(10, 15) rotate(-30, 45, 60)">
+    <!-- Popper tube body -->
+    <rect x="20" y="40" width="50" height="35" rx="8" fill="#FF6B4A"/>
+    <!-- Popper cone top -->
+    <polygon points="20,40 70,40 60,20 30,20" fill="#FF6B4A" opacity="0.85"/>
+    <!-- Opening circle -->
+    <ellipse cx="45" cy="20" rx="15" ry="6" fill="#FFF8F4"/>
+  </g>
+  
+  <!-- Confetti dots and streamers -->
+  <!-- Coral dots -->
+  <circle cx="85" cy="18" r="4" fill="#FF6B4A"/>
+  <circle cx="105" cy="8" r="3" fill="#FF6B4A"/>
+  <circle cx="75" cy="10" r="2.5" fill="#FFB347"/>
+  
+  <!-- Amber elements -->
+  <circle cx="95" cy="28" r="3.5" fill="#FFB347"/>
+  <circle cx="112" cy="20" r="2" fill="#FFB347"/>
+  <circle cx="68" cy="22" r="3" fill="#FFB347"/>
+  
+  <!-- Streamers -->
+  <path d="M80 15 Q88 8 96 12" stroke="#FF6B4A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M88 25 Q100 15 108 22" stroke="#FFB347" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M72 20 Q78 12 86 18" stroke="#FFB347" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Wordmark "Partypop" -->
+  <text 
+    x="130" 
+    y="75" 
+    font-family="Georgia, 'Times New Roman', serif" 
+    font-size="46" 
+    font-weight="700" 
+    fill="#FF6B4A"
+    letter-spacing="-1"
+  >Partypop</text>
+</svg>
