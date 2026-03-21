@@ -153,3 +153,20 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 280px;
   }
 }
+
+/* Animation safety net — prevents invisible content if Framer Motion hydration is slow */
+@media (prefers-reduced-motion: reduce) {
+  [data-framer-component-type],
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Framer Motion whileInView fallback — make visible after 300ms even if IntersectionObserver hasn't fired */
+@keyframes fadeInFallback {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
