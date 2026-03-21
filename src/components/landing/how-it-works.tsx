@@ -40,11 +40,11 @@ export function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col gap-20 relative">
+        <div style={{ display: "flex", flexDirection: "column", gap: "3rem", position: "relative" }}>
           {/* Vertical timeline line */}
           <div
-            className="absolute left-[calc(50%-1px)] top-8 bottom-8 w-0.5 hidden md:block"
-            style={{ background: "var(--border)" }}
+            style={{ position: "absolute", left: "calc(50% - 1px)", top: "2rem", bottom: "2rem", width: "2px", background: "var(--border)", display: "none" }}
+            className="md:block"
           />
 
           {steps.map((step, i) => (
@@ -58,40 +58,40 @@ export function HowItWorks() {
               data-reverse={i % 2 === 1 ? "true" : "false"}
               style={{ display: "flex", alignItems: "center" }}
             >
-              <div style={{ flex: 1 }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
                 <div
-                  className="text-8xl font-bold mb-0 leading-none select-none"
-                  style={{ color: "var(--border)", fontFamily: "var(--font-mono)" }}
+                  style={{ fontSize: "5rem", fontWeight: 700, lineHeight: 1, userSelect: "none", color: "var(--border)", fontFamily: "var(--font-mono)" }}
                 >
                   {step.number}
                 </div>
                 <div
-                  className="text-sm font-bold uppercase tracking-widest mb-3 -mt-2"
-                  style={{ color: "var(--accent)" }}
+                  style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.75rem", marginTop: "-0.5rem", color: "var(--accent)" }}
                 >
                   Step {step.number}
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                <h3 style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: "1.5rem", fontWeight: 700, marginBottom: "0.75rem", color: "var(--text-primary)" }}>
                   {step.title}
                 </h3>
-                <p className="text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                <p style={{ fontSize: "1rem", lineHeight: 1.6, color: "var(--text-secondary)" }}>
                   {step.description}
                 </p>
               </div>
-              <div style={{ flex: 1 }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
                 <div
-                  className="rounded-xl overflow-hidden border"
                   style={{
-                    borderColor: "var(--border)",
+                    borderRadius: "0.75rem",
+                    overflow: "hidden",
+                    border: "1px solid var(--border)",
                     boxShadow: "0 4px 24px rgba(45,27,14,0.08)",
+                    maxHeight: "280px",
                   }}
                 >
                   <Image
                     src={step.image}
                     alt={step.title}
                     width={480}
-                    height={320}
-                    className="w-full h-auto object-cover"
+                    height={280}
+                    style={{ width: "100%", height: "280px", objectFit: "cover", display: "block" }}
                   />
                 </div>
               </div>

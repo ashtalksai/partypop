@@ -131,15 +131,25 @@ h1, h2, h3, h4, h5, h6 {
 /* BUG-03: How-it-works steps responsive layout */
 .how-it-works-step {
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: stretch !important;
+}
+
+.how-it-works-step > div:last-child {
+  max-height: 220px;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .how-it-works-step {
     flex-direction: row;
     gap: 3rem;
+    align-items: center !important;
   }
   .how-it-works-step[data-reverse="true"] {
     flex-direction: row-reverse;
+  }
+  .how-it-works-step > div:last-child {
+    max-height: 280px;
   }
 }

@@ -123,17 +123,27 @@ export default function DeckPage() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="flex flex-col" style={{ background: "#1a0f08", width: "100vw", height: "100vh", overflow: "hidden" }}>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      background: "#1a0f08",
+      width: "100vw",
+      height: "100vh",
+      overflow: "hidden",
+      position: "fixed",
+      top: 0,
+      left: 0,
+    }}>
       {/* Nav */}
-      <div className="flex items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-xl font-bold text-white">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.5rem", flexShrink: 0 }}>
+        <Link href="/" style={{ fontFamily: "Fraunces, Georgia, serif", fontSize: "1.25rem", fontWeight: 700, color: "white", textDecoration: "none" }}>
           Party<span style={{ color: "#FF6B4A" }}>pop</span>
         </Link>
-        <div className="text-sm text-white/40">{current + 1} / {slides.length}</div>
+        <div style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)" }}>{current + 1} / {slides.length}</div>
       </div>
 
       {/* Slide */}
-      <div className="flex-1 relative overflow-hidden">
+      <div style={{ flex: 1, position: "relative", overflow: "hidden", minHeight: 0 }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -141,8 +151,15 @@ export default function DeckPage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.3 }}
-            className="absolute inset-0 mx-8 my-4 rounded-2xl p-12"
-            style={{ background: slides[current].bg }}
+            style={{
+              position: "absolute",
+              inset: 0,
+              margin: "1rem 2rem",
+              borderRadius: "1rem",
+              padding: "3rem",
+              background: slides[current].bg,
+              overflow: "hidden",
+            }}
           >
             {slides[current].content}
           </motion.div>
@@ -150,20 +167,19 @@ export default function DeckPage() {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-4 py-4">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", padding: "1rem", flexShrink: 0 }}>
         <button onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}
-          className="p-2.5 rounded-full border border-white/20 disabled:opacity-30 text-white/70 hover:text-white transition-colors">
+          style={{ padding: "0.625rem", borderRadius: "9999px", border: "1px solid rgba(255,255,255,0.2)", background: "transparent", cursor: current === 0 ? "not-allowed" : "pointer", opacity: current === 0 ? 0.3 : 0.7, color: "white", display: "flex", alignItems: "center" }}>
           <ChevronLeft size={20} />
         </button>
-        <div className="flex gap-2">
+        <div style={{ display: "flex", gap: "0.5rem" }}>
           {slides.map((_, i) => (
             <button key={i} onClick={() => setCurrent(i)}
-              className="w-2 h-2 rounded-full transition-all"
-              style={{ background: i === current ? "#FF6B4A" : "rgba(255,255,255,0.3)" }} />
+              style={{ width: "0.5rem", height: "0.5rem", borderRadius: "9999px", border: "none", cursor: "pointer", background: i === current ? "#FF6B4A" : "rgba(255,255,255,0.3)", padding: 0, transition: "all 0.15s" }} />
           ))}
         </div>
         <button onClick={() => setCurrent(c => Math.min(slides.length - 1, c + 1))} disabled={current === slides.length - 1}
-          className="p-2.5 rounded-full border border-white/20 disabled:opacity-30 text-white/70 hover:text-white transition-colors">
+          style={{ padding: "0.625rem", borderRadius: "9999px", border: "1px solid rgba(255,255,255,0.2)", background: "transparent", cursor: current === slides.length - 1 ? "not-allowed" : "pointer", opacity: current === slides.length - 1 ? 0.3 : 0.7, color: "white", display: "flex", alignItems: "center" }}>
           <ChevronRight size={20} />
         </button>
       </div>
