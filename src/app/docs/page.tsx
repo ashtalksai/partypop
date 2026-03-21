@@ -26,7 +26,7 @@ const docs: Record<string, { title: string; summary: string; url: string; update
     {
       title: "GTM Plan — Partypop",
       summary: "3-phase go-to-market strategy: Phase 1 organic (Reddit, Pinterest, Facebook Groups, TikTok, SEO), Phase 2 paid + partnerships, Phase 3 vendor marketplace. 90-day milestones and channel stack.",
-      url: "https://docs.google.com/document/d/1D8Qq2gftOhV1gz6XSZBzMN9P1d9bDLBFQlsz3Hz9amc/edit",
+      url: "https://docs.google.com/document/d/18hhtFHNhK0XN_Y3MmgHfq6mvLAiqS9xMrBZKRZGGUEk/edit",
       updated: "Mar 21, 2026",
       external: true,
     },
@@ -35,7 +35,7 @@ const docs: Record<string, { title: string; summary: string; url: string; update
     {
       title: "Marketing Plan — Partypop",
       summary: "Brand voice, content calendar, blog strategy (10 priority posts), email welcome sequence (5-day drip), Pinterest + TikTok + Instagram playbook, KPIs and tracking.",
-      url: "https://docs.google.com/document/d/1XHnjdw5K68JYKI5q8TZa4x30dUCyklRjDU51Fkjv80Q/edit",
+      url: "https://docs.google.com/document/d/1yvrhsLL3dtB9zx_ok_w-4PLUXxzDG8CkjcQwFPfPmko/edit",
       updated: "Mar 21, 2026",
       external: true,
     },
@@ -60,7 +60,7 @@ const docs: Record<string, { title: string; summary: string; url: string; update
     {
       title: "Pitch Deck Content (Google Doc)",
       summary: "Source content for the pitch deck: all 6 slides with headlines, copy, stats, and CTAs. Written by @marketer for the Partypop investor pitch.",
-      url: "https://docs.google.com/document/d/1QfH2kZLzzc6981xbLcf2_LlnxyDsJsNUOyXru6d4BBQ/edit",
+      url: "https://docs.google.com/document/d/1yApgKX6Juk_ZURhtbFcFUS_rpSMyfnocnU6Oed9C2P0/edit",
       updated: "Mar 21, 2026",
       external: true,
     },

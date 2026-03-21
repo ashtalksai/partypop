@@ -506,19 +506,12 @@ function Slide5Business() {
   );
 }
 
-function Slide6Vision() {
-  const live = [
-    "17-page full product at partypopai.ashketing.com",
-    "AI-powered party plan generator",
-    "Auth, dashboard, party management",
-    "Quiz lead funnel",
-    "Health endpoint, shared Postgres, 256MB deploy",
-  ];
-
-  const next = [
-    "Vendor directory with real local data",
-    "Mobile app (React Native, 90 days)",
-    "White-label for event planning businesses",
+function Slide6Ask() {
+  const channels = [
+    { icon: "🔴", name: "Reddit", detail: "r/Mommit, r/beyondthebump, r/Parenting — organic community seeding" },
+    { icon: "🎵", name: "TikTok", detail: "\"2-minute party plan\" demos — viral potential with busy parent content" },
+    { icon: "📌", name: "Pinterest", detail: "Party theme boards with Partypop CTAs — high buyer intent traffic" },
+    { icon: "📘", name: "Meta Ads", detail: "Lookalike parents with kids 2-10, retargeting funnel" },
   ];
 
   return (
@@ -534,74 +527,72 @@ function Slide6Vision() {
           className="text-xs uppercase tracking-widest font-semibold"
           style={{ color: brand.amber }}
         >
-          Built, live, and growing
+          The Ask
         </motion.span>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl font-bold text-white mt-3 mb-8"
+          className="text-4xl md:text-5xl font-bold text-white mt-3 mb-2"
           style={{ fontFamily: "Fraunces, Georgia, serif" }}
         >
-          The Ask + Vision
+          Own the category before anyone wakes up.
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-base mb-7"
+          style={{ color: "rgba(255,255,255,0.55)" }}
+        >
+          No AI-native competitor owns this space yet. First mover wins with distribution.
+        </motion.p>
 
-        <div className="grid grid-cols-2 gap-6 mb-8">
-          {/* What's live */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="rounded-2xl p-6"
-            style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-green-400 text-lg">●</span>
-              <h3 className="font-semibold text-white text-sm uppercase tracking-wide">What&apos;s Live Today</h3>
-            </div>
-            <ul className="space-y-2">
-              {live.map(item => (
-                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                  <span className="text-green-400 mt-0.5 shrink-0">✅</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* What's next */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="rounded-2xl p-6"
-            style={{ background: `${brand.amber}18`, border: `1px solid ${brand.amber}30` }}
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span style={{ color: brand.amber }} className="text-lg">→</span>
-              <h3 className="font-semibold text-white text-sm uppercase tracking-wide">What&apos;s Next</h3>
-            </div>
-            <ul className="space-y-2">
-              {next.map(item => (
-                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                  <span style={{ color: brand.amber }} className="mt-0.5 shrink-0">→</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 pt-4" style={{ borderTop: "1px solid rgba(255,179,71,0.2)" }}>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Partypop becomes the <span style={{ color: brand.amber, fontWeight: 600 }}>operating system for family celebrations</span> — every birthday, holiday, graduation, and milestone. Parents trust it like they trust Notion for work.
-              </p>
-            </div>
-          </motion.div>
+        {/* Distribution channels */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {channels.map((c, i) => (
+            <motion.div
+              key={c.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 + i * 0.1 }}
+              className="flex items-start gap-3 rounded-xl p-4"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
+            >
+              <span className="text-2xl shrink-0">{c.icon}</span>
+              <div>
+                <div className="font-semibold text-white text-sm mb-0.5">{c.name}</div>
+                <div className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.55)" }}>{c.detail}</div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* AppSumo launch + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75 }}
+          className="flex items-center justify-between rounded-2xl px-6 py-4 mb-6"
+          style={{ background: `${brand.amber}18`, border: `1px solid ${brand.amber}30` }}
+        >
+          <div>
+            <div className="font-semibold text-white text-sm mb-0.5">🚀 AppSumo Launch</div>
+            <div className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Lifetime deal to spike early MRR + reviews — prime the organic flywheel
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-lg font-bold" style={{ color: brand.amber }}>Day 1</div>
+            <div className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Distribution play</div>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.9 }}
           className="text-center"
         >
           <a
@@ -627,7 +618,7 @@ const SLIDES = [
   { id: "solution", component: <Slide3Solution />, label: "Solution" },
   { id: "market", component: <Slide4Market />, label: "Market" },
   { id: "business", component: <Slide5Business />, label: "Business Model" },
-  { id: "vision", component: <Slide6Vision />, label: "Vision" },
+  { id: "ask", component: <Slide6Ask />, label: "The Ask" },
 ];
 
 // ─── Main pitch deck ─────────────────────────────────────────────────────────
