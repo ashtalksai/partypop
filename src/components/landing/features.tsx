@@ -42,7 +42,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24" style={{ background: "var(--background)" }}>
+    <section className="py-16 md:py-24" style={{ background: "var(--background)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
           initial={{ opacity: 1, y: 16 }}
@@ -55,7 +55,7 @@ export function Features() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:auto-rows-fr">
           {features.map((f, i) => (
             <motion.div
               key={f.title}

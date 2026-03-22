@@ -74,7 +74,7 @@ export default function PricingPage() {
 
       <div className="py-12 text-center">
         <Link href="/signup"
-          className="inline-flex px-8 py-4 rounded-md text-base font-semibold text-white"
+          className="inline-flex px-8 py-4 min-h-[44px] rounded-md text-base font-semibold text-white transition-all hover:scale-[1.02]"
           style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}>
           Start Free — No Credit Card Required →
         </Link>

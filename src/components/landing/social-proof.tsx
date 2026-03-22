@@ -32,7 +32,7 @@ const stats = [
 
 export function SocialProof() {
   return (
-    <section className="py-24" style={{ background: "var(--surface-warm)" }}>
+    <section className="py-16 md:py-24" style={{ background: "var(--surface-warm)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
           initial={{ opacity: 1, y: 16 }}

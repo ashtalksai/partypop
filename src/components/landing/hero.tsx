@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="pt-24 pb-20 flex flex-col items-center text-center" style={{ background: "var(--background)" }}>
+    <section className="pt-24 pb-16 md:pb-24 flex flex-col items-center text-center" style={{ background: "var(--background)" }}>
       <div className="max-w-[960px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -27,9 +27,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="font-display font-bold leading-tight mb-6"
-          style={{ fontSize: "clamp(48px,7vw,72px)", color: "var(--text-primary)" }}
+          style={{ fontSize: "clamp(32px,7vw,72px)", color: "var(--text-primary)" }}
         >
-          Your kid&apos;s party,<br />planned in 2 minutes.
+          Your kid&apos;s party,{" "}
+          <span className="hidden sm:inline"><br /></span>
+          planned in 2&nbsp;minutes.
         </motion.h1>
 
         <motion.p
@@ -50,14 +52,14 @@ export function Hero() {
         >
           <Link
             href="/signup"
-            className="px-8 py-4 rounded-md text-base font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.99]"
+            className="px-8 py-4 min-h-[44px] rounded-md text-base font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.99]"
             style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}
           >
             Plan My Party Free
           </Link>
           <Link
             href="/#how-it-works"
-            className="text-base font-medium transition-colors hover:text-[var(--accent)]"
+            className="text-base font-medium transition-colors hover:text-[var(--accent)] min-h-[44px] flex items-center"
             style={{ color: "var(--text-secondary)" }}
           >
             See how it works →

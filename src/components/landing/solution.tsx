@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Solution() {
   return (
-    <section className="py-24" style={{ background: "var(--surface)" }}>
+    <section className="py-16 md:py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-prose mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 1, y: 16 }}
@@ -21,7 +21,7 @@ export function Solution() {
           </p>
           <Link
             href="/signup"
-            className="inline-flex px-8 py-4 rounded-md text-base font-semibold text-white transition-all hover:scale-[1.02]"
+            className="inline-flex px-8 py-4 min-h-[44px] rounded-md text-base font-semibold text-white transition-all hover:scale-[1.02]"
             style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}
           >
             Get My Free Plan

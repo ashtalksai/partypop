@@ -63,7 +63,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: "var(--background)" }}>
+    <div className="min-h-screen flex items-center justify-center p-6 w-full" style={{ background: "var(--background)" }}>
       {loading ? (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
           <motion.div
@@ -80,7 +80,7 @@ export default function OnboardingPage() {
           </p>
         </motion.div>
       ) : (
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-lg">
           {/* Progress */}
           <div className="mb-8">
             <div className="flex justify-between mb-2">
@@ -115,19 +115,19 @@ export default function OnboardingPage() {
           {/* Navigation */}
           <div className="flex items-center justify-between mt-6">
             <button onClick={back} disabled={step === 0}
-              className="flex items-center gap-1 px-4 py-2.5 rounded-md text-sm font-medium disabled:opacity-30 transition-all"
+              className="flex items-center gap-1 px-4 py-3 min-h-[44px] rounded-md text-sm font-medium disabled:opacity-30 transition-all"
               style={{ color: "var(--text-secondary)" }}>
               <ChevronLeft size={16} /> Back
             </button>
             {step < STEPS.length - 1 ? (
               <button onClick={next}
-                className="flex items-center gap-1 px-6 py-2.5 rounded-md text-sm font-semibold text-white transition-all hover:scale-[1.01]"
+                className="flex items-center gap-1 px-6 py-3 min-h-[44px] rounded-md text-sm font-semibold text-white transition-all hover:scale-[1.01]"
                 style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}>
                 Next <ChevronRight size={16} />
               </button>
             ) : (
               <button onClick={submit}
-                className="flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-white transition-all hover:scale-[1.01]"
+                className="flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-md text-sm font-semibold text-white transition-all hover:scale-[1.01]"
                 style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}>
                 <Sparkles size={16} /> Build My Party Plan →
               </button>

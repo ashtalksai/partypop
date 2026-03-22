@@ -108,8 +108,8 @@ export function Navbar() {
                 <Link
                   href="/signup"
                   onClick={() => setOpen(false)}
-                  className="px-5 py-3 rounded-md text-sm font-semibold text-white text-center"
-                  style={{ background: "var(--accent)" }}
+                  className="px-5 py-3 min-h-[44px] flex items-center justify-center rounded-md text-sm font-semibold text-white text-center"
+                  style={{ background: "var(--accent)", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }}
                 >
                   Plan My Party Free
                 </Link>

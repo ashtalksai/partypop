@@ -6,7 +6,7 @@ import Link from "next/link";
 export function CTA() {
   return (
     <section
-      className="py-24"
+      className="py-16 md:py-24"
       style={{
         background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-amber) 100%)",
       }}
@@ -25,7 +25,7 @@ export function CTA() {
           </p>
           <Link
             href="/signup"
-            className="inline-flex px-8 py-4 rounded-md text-base font-semibold transition-all hover:scale-[1.02] border-2 border-white text-white hover:bg-white"
+            className="inline-flex px-8 py-4 min-h-[44px] rounded-md text-base font-semibold transition-all hover:scale-[1.02] border-2 border-white text-white hover:bg-white hover:text-[var(--accent)]"
             style={{ color: "white" }}
           >
             Plan My First Party Free →

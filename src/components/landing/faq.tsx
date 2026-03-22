@@ -41,7 +41,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-24" style={{ background: "var(--background)" }}>
+    <section className="py-16 md:py-24" style={{ background: "var(--background)" }}>
       <div className="max-w-[760px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 1, y: 16 }}

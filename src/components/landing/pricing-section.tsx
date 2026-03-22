@@ -62,7 +62,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-24" style={{ background: "var(--surface)" }}>
+    <section id="pricing" className="py-16 md:py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
           initial={{ opacity: 1, y: 16 }}
@@ -78,14 +78,14 @@ export function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="relative rounded-lg border p-7"
+              className="relative rounded-lg border p-5 sm:p-7 flex flex-col overflow-hidden"
               style={{
                 background: "var(--surface)",
                 borderColor: plan.highlighted ? "var(--accent)" : "var(--border)",
@@ -106,9 +106,9 @@ export function PricingSection() {
                 </div>
               )}
               <div className="mb-6">
-                <h3 className="font-display text-xl font-bold mb-1" style={{ color: "var(--text-primary)" }}>{plan.name}</h3>
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-4xl font-bold" style={{ color: "var(--text-primary)", fontFamily: "var(--font-mono)" }}>
+                <h3 className="font-display text-xl font-bold mb-1 truncate" style={{ color: "var(--text-primary)" }}>{plan.name}</h3>
+                <div className="flex items-baseline gap-1 mb-1 flex-wrap">
+                  <span className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--text-primary)", fontFamily: "var(--font-mono)" }}>
                     {plan.price}
                   </span>
                   <span className="text-sm" style={{ color: "var(--text-muted)" }}>{plan.period}</span>
@@ -116,15 +116,15 @@ export function PricingSection() {
                 <p className="text-xs" style={{ color: "var(--text-muted)" }}>{plan.subline}</p>
               </div>
 
-              <div className="flex flex-col gap-3 mb-8">
+              <div className="flex flex-col gap-3 mb-8 flex-1">
                 {plan.features.map((f) => (
-                  <div key={f.text} className="flex items-center gap-2.5">
+                  <div key={f.text} className="flex items-start gap-2.5">
                     {f.included ? (
-                      <Check size={16} style={{ color: "var(--accent)", flexShrink: 0 }} />
+                      <Check size={16} className="mt-0.5 shrink-0" style={{ color: "var(--accent)" }} />
                     ) : (
-                      <X size={16} style={{ color: "var(--text-muted)", flexShrink: 0 }} />
+                      <X size={16} className="mt-0.5 shrink-0" style={{ color: "var(--text-muted)" }} />
                     )}
-                    <span className="text-sm" style={{ color: f.included ? "var(--text-secondary)" : "var(--text-muted)" }}>
+                    <span className="text-sm break-words" style={{ color: f.included ? "var(--text-secondary)" : "var(--text-muted)" }}>
                       {f.text}
                     </span>
                   </div>
@@ -133,11 +133,11 @@ export function PricingSection() {
 
               <Link
                 href={plan.href}
-                className="block text-center py-3 rounded-md text-sm font-semibold transition-all hover:scale-[1.01]"
+                className="block text-center py-3 min-h-[44px] rounded-md text-sm font-semibold transition-all hover:scale-[1.01]"
                 style={
                   plan.highlighted
                     ? { background: "var(--accent)", color: "white", boxShadow: "0 4px 12px rgba(255,107,74,0.32)" }
-                    : { border: "2px solid var(--border)", color: "var(--text-secondary)" }
+                    : { border: "2px solid var(--accent)", color: "var(--accent)" }
                 }
               >
                 {plan.cta}

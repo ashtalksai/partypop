@@ -26,7 +26,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24" style={{ background: "var(--surface)" }}>
+    <section id="how-it-works" className="py-16 md:py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-container mx-auto px-6">
         <motion.div
           initial={{ opacity: 1, y: 16 }}
