@@ -5,8 +5,12 @@ import { DashboardClient } from "./dashboard-client";
 
 export default async function DashboardPage() {
   const session = await auth();
+  if (!session?.user?.id) {
+    const { redirect } = await import("next/navigation");
+    redirect("/login");
+  }
   const parties = await prisma.party.findMany({
-    where: { userId: session!.user!.id! },
+    where: { userId: session.user.id },
     include: { plan: true, guests: true },
     orderBy: { createdAt: "desc" },
   });
@@ -15,5 +19,5 @@ export default async function DashboardPage() {
     ...p,
     date: p.date?.toISOString() ?? null,
   }));
-  return <DashboardClient parties={serialized} userName={session!.user?.name || "there"} />;
+  return <DashboardClient parties={serialized} userName={session.user?.name || "there"} />;
 }

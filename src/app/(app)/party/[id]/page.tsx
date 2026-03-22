@@ -5,10 +5,14 @@ import { PartyPlanClient } from "./party-plan-client";
 
 export default async function PartyPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await auth();
+  if (!session?.user?.id) {
+    const { redirect } = await import("next/navigation");
+    redirect("/login");
+  }
   const { id } = await params;
 
   const party = await prisma.party.findFirst({
-    where: { id, userId: session!.user!.id! },
+    where: { id, userId: session.user.id },
     include: { plan: true, guests: true },
   });
 
