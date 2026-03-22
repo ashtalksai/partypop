@@ -1,16 +1,16 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 import { DashboardClient } from "./dashboard-client";
 
 export default async function DashboardPage() {
   const session = await auth();
   if (!session?.user?.id) {
-    const { redirect } = await import("next/navigation");
     redirect("/login");
   }
+  const userId = session.user.id;
   const parties = await prisma.party.findMany({
-    where: { userId: session.user.id },
+    where: { userId },
     include: { plan: true, guests: true },
     orderBy: { createdAt: "desc" },
   });
